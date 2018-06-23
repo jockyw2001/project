@@ -1,0 +1,25 @@
+utpa2k.ko
+sensorif.ko
+csi.ko
+libcamera_if.ko
+isrcb.ko
+sensor_imx317_hdr.ko chmap=1
+mhal.ko
+isp.ko
+ispalgo.ko
+ispmid.ko
+ntfs.ko
+cifs.ko
+nls_utf8.ko
+grace.ko
+sunrpc.ko
+lockd.ko
+nfs.ko
+nfsv2.ko
+ext2.ko
+fat.ko
+msdos.ko
+vfat.ko
+mdrv-sata-host.ko
+ceva_link.ko
+

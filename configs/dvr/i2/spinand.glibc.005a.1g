@@ -1,0 +1,19 @@
+CHIP = i2
+BOARD = 005A
+BOARD_NAME = MSC005A-S01A
+PRODUCT = dvr
+TOOLCHAIN = glibc
+TOOLCHAIN_VERSION = 4.8.3
+KERNEL_VERSION = 3.18.30
+KERNEL_CONFIG = glibc
+IMAGE_CONFIG = spinand.ubifs.hfglibc.nvr.mma
+CUSTOMER_OPTIONS = null_options.mk
+CUSTOMER_TAILOR = dvr_i2_glibc_tailor.mk
+MMAP = SN_MMAP_DTV_MM_I2_1G.h
+MHAL = i2
+BOOTLOGO_FILE = sigmastar.jpg
+KERNEL_MEMADR = 0x2400000
+KERNEL_MENLEN = 0x3CB00000
+EXBOOTARGS   = resolution=DACOUT_1080P_60 reserve_mem=36M
+KERNEL_BOOT_ENV = LX_MEM=$(KERNEL_MENLEN) EMAC_MEM=0x100000 mma_heap=mma_heap_name0,miu=0,sz=0x20200000 mma_heap=mma_heap_low_memory,miu=0,sz=0x9B00000,max_off=0x1DF00000
+TOOLCHAIN_REL = arm-linux-gnueabihf-

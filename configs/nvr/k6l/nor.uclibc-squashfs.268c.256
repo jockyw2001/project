@@ -1,0 +1,18 @@
+CHIP = k6l
+BOARD = 268C
+BOARD_NAME = MST268C-D01A-S
+PRODUCT = nvr
+TOOLCHAIN = uclibc
+TOOLCHAIN_VERSION = 0.1
+KERNEL_VERSION = 3.10.40
+KERNEL_CONFIG = norflash
+IMAGE_CONFIG = nor.squashfs.uclibc.nvr.mma
+CUSTOMER_OPTIONS = 268c.256_options.mk
+CUSTOMER_TAILOR = nvr_k6l_uclibc_tailor.mk
+MMAP = SN_MMAP_DTV_MM_K6LITE_256.h
+MHAL = simulation k6l
+TOOLCHAIN_REL = arm-buildroot-linux-uclibcgnueabi-
+KERNEL_MEMADR = 0xC00000
+KERNEL_MENLEN = 0xE300000
+KERNEL_BOOT_ENV = LX_MEM=$(KERNEL_MENLEN) EMAC_MEM=0x100000 mma_heap=mma_heap_name0,miu=0,sz=0x6900000
+EXBOOTARGS   = resolution=DACOUT_1080P_60

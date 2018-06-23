@@ -1,0 +1,10 @@
+# <- this is for comment / total file size must be ldss than 4KB
+
+ustar $(usb_folder)/mscript/spinand/[[cis.us
+ustar $(usb_folder)/mscript/spinand/[[ipl.us
+ustar $(usb_folder)/mscript/spinand/[[uboot.us
+ustar $(usb_folder)/mscript/spinand/[[kernel.us
+ustar $(usb_folder)/mscript/spinand/[[ubi.us
+ustar $(usb_folder)/scripts/set_config
+
+% <- this is end of file symbol

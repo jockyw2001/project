@@ -1,0 +1,7 @@
+#!/bin/sh
+export PATH=/sbin:/bin
+export LD_LIBRARY_PATH=/lib
+mkdir -p /dev/pts
+mount -t devpts devpts /dev/pts
+busybox telnetd&
+ulimit -c unlimited

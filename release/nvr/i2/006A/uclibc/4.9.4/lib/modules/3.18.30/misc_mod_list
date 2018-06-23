@@ -1,0 +1,16 @@
+utpa2k.ko
+csi.ko
+sensorif.ko
+libcamera_if.ko
+mhal.ko
+ntfs.ko
+cifs.ko
+nls_utf8.ko
+grace.ko
+sunrpc.ko
+lockd.ko
+nfs.ko
+nfsv2.ko
+ext2.ko
+fat.ko
+vfat.ko

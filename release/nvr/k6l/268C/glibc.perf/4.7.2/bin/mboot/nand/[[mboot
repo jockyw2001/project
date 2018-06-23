@@ -1,0 +1,14 @@
+tftp 0x20400000  mboot/NANDINFO.nni
+
+tftp 0x20500000  mboot/PAIRPAGEMAP_v2.ppm
+
+tftp 0x20600000  mboot/PARTITION_v2_default.pni
+
+tftp 0x20700000  mboot/bfn_miu.bin
+
+tftp 0x20800000  mboot/bfn_loader.bin
+
+tftp 0x20900000  mboot/bfn_app.bin
+
+ncisldrapp 0x20400000 0x20500000 0x20600000 0x20700000 0x20800000  0x10000  0x20900000 0x200000
+

@@ -1,0 +1,13 @@
+media.ko
+videodev.ko
+v4l2-common.ko
+videobuf2-core.ko
+videobuf2-memops.ko
+videobuf2-vmalloc.ko
+udc-core.ko
+libcomposite.ko
+usb_f_uac1.ko
+usb_f_uvc.ko
+mtu3.ko
+g_webcam.ko bulk_streaming_ep=0 uac_function_enable=1 streaming_maxburst=0
+mstar_fbdev.ko

@@ -1,0 +1,11 @@
+# <- this is for comment / total file size must be ldss than 4KB
+
+ustar $(usb_folder)/mscript/sf/[[set_partition.us
+ustar $(usb_folder)/mscript/sf/[[ipl.us
+ustar $(usb_folder)/mscript/sf/[[uboot.us
+ustar $(usb_folder)/mscript/sf/[[kernel.us
+ustar $(usb_folder)/mscript/sf/[[system.us
+ustar $(usb_folder)/mscript/sf/[[data.us
+ustar $(usb_folder)/scripts/set_config
+
+% <- this is end of file symbol

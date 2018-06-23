@@ -1,0 +1,23 @@
+IMAGE_LIST = kernel rootfs nvrservice
+
+FLASH_TYPE = nor
+PAT_TABLE  = spi
+BUSYBOX    = busybox-1.20.2-arm-buildroot-linux-uclibcgnueabi-uclibc
+LIBC       = libuclibc
+EXBOOTARGS   = resolution=DACOUT_1080P_60
+
+kernel$(RESOUCE)   = $(PROJ_ROOT)/release/$(PRODUCT)/$(CHIP)/$(BOARD)/$(TOOLCHAIN)/$(TOOLCHAIN_VERSION)/bin/kernel/$(FLASH_TYPE)/uImage
+kernel$(PATSIZE)   = 0x3B6000
+kernel$(BOOTENV)   = $(KERNEL_BOOT_ENV)
+
+rootfs$(RESOUCE)   = $(OUTPUTDIR)/rootfs
+rootfs$(FSTYPE)    = squashfs
+rootfs$(PATSIZE)   = 0x2FFFFF
+rootfs$(BOOTENV)   = root=/dev/mtdblock2 rootfstype=squashfs ro init=/linuxrc
+
+nvrservice$(RESOUCE)   = $(OUTPUTDIR)/tvconfig/config
+nvrservice$(FSTYPE)    = squashfs
+nvrservice$(PATSIZE)   = 0x4FFFFF
+nvrservice$(MOUNTDIR)  = /dev/mtdblock3
+nvrservice$(OPTIONS)   = ro
+

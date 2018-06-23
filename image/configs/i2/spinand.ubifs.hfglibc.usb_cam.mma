@@ -1,0 +1,30 @@
+IMAGE_LIST = ipl uboot logo kernel rootfs nvrservice customer
+FLASH_TYPE = spinand
+UBI_MLC_TYPE = 0
+PAT_TABLE  = ubi
+BUSYBOX    = busybox-1.20.2-arm-linux-gnueabihf-glibc
+LIBC       = libc-2.19
+MTDPARTS   = "mtdparts=nand0:0x60000@0x140000(IPL0),0x60000(IPL1),0x60000(IPL_CUST0),0x60000(IPL_CUST1),0xC0000(UBOOT0),0xC0000(UBOOT1),0x60000(ENV),0x120000(LOGO),$(kernel$(MTDPART))-(UBI)"
+PHY_TEST = no
+
+kernel$(RESOUCE)   = $(PROJ_ROOT)/release/$(PRODUCT)/$(CHIP)/$(BOARD)/$(TOOLCHAIN)/$(TOOLCHAIN_VERSION)/bin/kernel/$(FLASH_TYPE)/uImage.xz
+kernel$(PATSIZE)   = 0x500000
+kernel$(BOOTENV)   = $(KERNEL_BOOT_ENV)
+kernel$(MTDPART)   = $(kernel$(PATSIZE))(KERNEL),$(kernel$(PATSIZE))(RECOVERY),
+
+rootfs$(RESOUCE)   = $(OUTPUTDIR)/rootfs
+rootfs$(FSTYPE)    = ubifs
+rootfs$(PATSIZE)   = 0xF00000
+rootfs$(BOOTENV)   = ubi.mtd=10,2048 root=ubi:rootfs rw rootfstype=ubifs init=/linuxrc rootwait=1
+
+nvrservice$(RESOUCE)   = $(OUTPUTDIR)/tvconfig/config
+nvrservice$(FSTYPE)    = ubifs
+nvrservice$(PATSIZE)   = 0x2000000
+nvrservice$(MOUNTDIR)  = /tvconfig
+nvrservice$(OPTIONS)   = rw
+
+customer$(RESOUCE)   = $(OUTPUTDIR)/customer
+customer$(FSTYPE)    = ubifs
+customer$(PATSIZE)   = 0x3000000
+customer$(MOUNTDIR)  = /customer
+customer$(OPTIONS)   = rw

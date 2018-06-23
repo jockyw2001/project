@@ -1,0 +1,23 @@
+IMAGE_LIST = ipl uboot kernel rootfs nvrservice
+
+FLASH_TYPE = nor
+BENCH = no
+PHY_TEST = no
+PAT_TABLE  = spi
+BUSYBOX     = busybox-1.20.2-arm-buildroot-linux-uclibcgnueabihif-static
+LIBC       = libuclibc-4.9.4
+
+kernel$(RESOUCE)   = $(PROJ_ROOT)/release/$(PRODUCT)/$(CHIP)/$(BOARD)/$(TOOLCHAIN)/$(TOOLCHAIN_VERSION)/bin/kernel/$(FLASH_TYPE)/uImage.xz
+kernel$(PATSIZE)   = 0x200000
+kernel$(BOOTENV)   = $(KERNEL_BOOT_ENV)
+
+rootfs$(RESOUCE)   = $(OUTPUTDIR)/rootfs
+rootfs$(FSTYPE)    = squashfs
+rootfs$(PATSIZE)   = 0x300000
+rootfs$(BOOTENV)   = root=/dev/mtdblock3 rootfstype=squashfs ro init=/linuxrc
+
+nvrservice$(RESOUCE)   = $(OUTPUTDIR)/tvconfig/config
+nvrservice$(FSTYPE)    = jffs2
+nvrservice$(PATSIZE)   = 0x800000
+nvrservice$(MOUNTDIR)  = /dev/mtdblock4
+nvrservice$(OPTIONS)   = ro
